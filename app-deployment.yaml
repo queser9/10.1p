@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: your-app
+  name: my-node-app
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: your-app
+      app: my-node-app
   template:
     metadata:
       labels:
-        app: your-app
+        app: my-node-app
     spec:
       containers:
-      - name: your-app
-        image: queser10/calculator-app:latest
+      - name: my-node-app
+        image: queser10/my-node-app:latest
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
